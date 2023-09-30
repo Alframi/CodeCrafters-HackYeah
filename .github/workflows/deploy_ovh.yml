@@ -2,8 +2,7 @@ name: ci
 
 on:
   push:
-    branches:
-      - 'feat/sciolek/dockerize'
+    branches: [main]
 
 jobs:
   build_and_push:
