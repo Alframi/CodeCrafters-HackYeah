@@ -1,0 +1,33 @@
+.header {
+  background-color: #333; /* Kolor tła nagłówka */
+  color: #fff; /* Kolor tekstu */
+  padding: 10px 0; /* Wewnętrzny odstęp */
+}
+
+.nav {
+  text-align: center; /* Wycentrowanie elementów nawigacji */
+}
+
+.navList {
+  list-style-type: none; /* Usunięcie punktów listy */
+  padding: 0; /* Usunięcie wewnętrznego odstępu listy */
+  margin: 0; /* Usunięcie marginesu listy */
+}
+
+.navItem {
+  display: inline-block; /* Elementy nawigacji obok siebie */
+  margin-right: 20px; /* Odstęp między elementami nawigacji */
+}
+
+.navLink {
+  text-decoration: none; /* Usunięcie podkreślenia linków */
+  color: #fff; /* Kolor tekstu linków */
+  font-weight: bold; /* Pogrubienie tekstu linków */
+  font-size: 18px; /* Rozmiar tekstu linków */
+  transition: color 0.3s; /* Animacja zmiany koloru tekstu */
+}
+
+/* Efekt zmiany koloru tekstu po najechaniu myszką */
+.navLink:hover {
+  color: #007bff; /* Nowy kolor tekstu po najechaniu myszką */
+}
