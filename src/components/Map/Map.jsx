@@ -29,6 +29,7 @@ export const Map = () => {
       lng: event.latLng.lng(),
     };
     setMarkers([...markers, newMarker]);
+    console.log(newMarker);
   };
 
   return (
