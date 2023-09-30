@@ -27,9 +27,7 @@ const App = () => {
                 <img src={bazawiedzy} alt="spo-icon" />
               </Link>
             </li>
-            <li>
-              <Link to="/Map">Mapy</Link>
-            </li>
+
             <li className={styles.navItem}>
               <Link to="/Moje-Konto" className={styles.navLink}>
                 <img src={mojekonto} alt="spo-icon" />
@@ -46,9 +44,7 @@ const App = () => {
             <Route path="/Map" element={<Map />} />
             <Route path="/Baza-Wiedzy" element={<BazaWiedzy />} />
             <Route path="/Moje-Konto" element={<MojeKonto />} />
-            <Route path="/Spotkania" element={<Spotkania />} >
-              
-            </Route>
+            <Route path="/Spotkania" element={<Spotkania />}></Route>
             {/* ///lista - przerzucic Sesja -> 
             //mapy */}
             <Route path="/Sesje" element={<Sesje />} />

@@ -1,0 +1,27 @@
+.naglowek {
+  margin-left: 8px;
+}
+
+.kategorie {
+  /* Styl kontenera kategorie */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kategorie span {
+  /* Styl elementów "Zwierzęta" i "Artykuły" */
+  margin-right: 8px; /* Odstęp między nimi */
+}
+.dzielenie {
+  /* Styl separatora "|" */
+  color: gray; /* Kolor separatora */
+}
+.buttonMap {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
