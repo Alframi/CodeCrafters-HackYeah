@@ -36,3 +36,12 @@ async def get_user(email: str):
         user = User(email=user_data[0], password=user_data[1], user_type=user_data[2])
         return user
 
+@app.post("/users")
+async def add_user(user: User):
+    db = Database("codecrafters", "testuser", "1234", "localhost", "5432")
+    db.connect()
+
+    query = sql.SQL("INSERT INTO users (email, password, user_type) VALUES (%s, %s, %s)")
+    user_data = (user.email, user.password, user.user_type)
+    db.execute_query(query, user_data)
+    return user
