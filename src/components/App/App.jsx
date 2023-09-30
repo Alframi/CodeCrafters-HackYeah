@@ -10,6 +10,7 @@ import mojekonto from '../../images/mojekonto.svg';
 import spotkania from '../../images/spotkania.svg';
 import alerty from '../../images/alerty.svg';
 
+
 const App = () => {
   return (
     <div>
