@@ -1,7 +1,9 @@
 import { StyledInput } from './Informacje.styled';
 
-export const Spotkania = () => {
+const Spotkania = () => {
     return <StyledInput>
       <input></input>
   </StyledInput>;
 };
+
+export default Spotkania

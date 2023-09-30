@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Informacje } from '../Informacje/Informacje';
 
 import {
@@ -17,10 +17,11 @@ export const Spotkania = () => {
   };
 
  const handleButtonClick = () => {
-   history.push('/Informacje');
+  navigate.push('/Informacje');
  };
 
-  const history = useHistory();
+  const navigate = useNavigate();
+  navigate('/Informacje');
 
 
   return (
