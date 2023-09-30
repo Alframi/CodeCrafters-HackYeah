@@ -32,7 +32,8 @@ export const Map = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCVxYeoVNl2XgRZsg8bxG1e_ftVflamRdQ">
+    // <LoadScript googleMapsApiKey="AIzaSyCVxYeoVNl2XgRZsg8bxG1e_ftVflamRdQ">
+    <LoadScript googleMapsApiKey="AIzaSyAHwyAHiWWh7rcHvZpV2JNSaWAAXC7BVFw">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={location}
