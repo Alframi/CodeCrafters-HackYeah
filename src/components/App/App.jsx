@@ -9,6 +9,7 @@ import bazawiedzy from '../../images/bazawiedzy.svg';
 import mojekonto from '../../images/mojekonto.svg';
 import spotkania from '../../images/spotkania.svg';
 import alerty from '../../images/alerty.svg';
+import Sesje from '../../pages/Sesje';
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="/Baza-Wiedzy" element={<BazaWiedzy />} />
             <Route path="/Moje-Konto" element={<MojeKonto />} />
             <Route path="/Spotkania" element={<Spotkania />} />
+            <Route path="/Sesje" element={<Sesje />} />
             <Route path="*" element={<Alerty />} />
           </Routes>
         </Suspense>

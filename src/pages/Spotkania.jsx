@@ -1,45 +1,27 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
-  StyledSelect,
-  StyledQuestion,
-  StyledButton,
   StyledWrapper,
+  StyledLink,
+  StyledImage,
+  StyledButton,
 } from './Spotkania.styled';
-
-
+import addBtn from '../images/addBtn.svg';
 
 const Spotkania = () => {
-  const [selectedAnimal, setSelectedAnimal] = useState('');
-
-  const navigate = useNavigate(); 
-
-  const handleSelectChange = e => {
-    setSelectedAnimal(e.target.value);
-  };
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/'); 
+    navigate('/');
   };
 
   return (
     <StyledWrapper>
-      <StyledQuestion>
-        <p>Co spotkałeś?</p>
-      </StyledQuestion>
-      <StyledSelect
-        id="rodzajZwierzecia"
-        name="rodzajZwierzecia"
-        value={selectedAnimal}
-        onChange={handleSelectChange}
-      >
-        <option value="lis">Lis</option>
-        <option value="sarna">Sarna</option>
-        <option value="dzik">Dzik</option>
-        <option value="bezpańskiPies">Bezpański pies</option>
-      </StyledSelect>
-      <StyledButton onClick={handleButtonClick}>Wybierz</StyledButton>
+      <StyledLink to="/Sesje">Lista</StyledLink>
+      <StyledLink to="/Mapy">Mapy</StyledLink>
+      <StyledButton onClick={handleButtonClick}>
+        <StyledImage src={addBtn} alt="add-button" />
+      </StyledButton>
     </StyledWrapper>
   );
 };
