@@ -1,17 +1,7 @@
-FROM node:18
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+FROM node:alpine
+RUN mkdir /app
+WORKDIR /app
+COPY package.json /app
 RUN npm install react-router-dom --legacy-peer-deps
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-
-CMD [ "npm", "start"]
+COPY . /app
+CMD ["npm", "start"]
