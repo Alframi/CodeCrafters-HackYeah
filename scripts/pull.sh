@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-docker pull alframi410/code_crafters_node_app
+for image in $(cat docker-stack.yml | envsubst | grep "image:" | awk '{ print $2 }'); do
+    echo "Pull image $image"
+    docker pull ${image}
+done
