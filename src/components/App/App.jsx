@@ -9,6 +9,7 @@ import bazawiedzy from '../../images/bazawiedzy.svg';
 import mojekonto from '../../images/mojekonto.svg';
 import spotkania from '../../images/spotkania.svg';
 import alerty from '../../images/alerty.svg';
+import { Map } from '../../components/Map/Map';
 
 const App = () => {
   return (
@@ -31,6 +32,9 @@ const App = () => {
                 <img src={bazawiedzy} alt="spo-icon" />
               </Link>
             </li>
+            <li>
+              <Link to="/Map">Mapy</Link>
+            </li>
             <li className={styles.navItem}>
               <Link to="/Moje-Konto" className={styles.navLink}>
                 <img src={mojekonto} alt="spo-icon" />
@@ -44,6 +48,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Navigate to="/" />} />
             <Route path="/Alerty" element={<Alerty />} />
+            <Route path="/Map" element={<Map />} />
             <Route path="/Baza-Wiedzy" element={<BazaWiedzy />} />
             <Route path="/Moje-Konto" element={<MojeKonto />} />
             <Route path="/Spotkania" element={<Spotkania />} />
