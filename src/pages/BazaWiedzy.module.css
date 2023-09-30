@@ -1,27 +1,54 @@
-.bazaWiedzy {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
 .listaInformacji {
   margin-left: 20px;
 }
-
+.naglowek {
+  margin-left: 8px;
+}
+.inputWithIcon {
+  position: relative;
+  display: flex;
+}
 .inputInformacji {
-  padding: 5px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  width: 100%;
+  background-color: #a6a6a6;
+  border-radius: 49px;
+  padding: 10px 20px; /* Dostosuj padding do swoich preferencji */
+  border: 1px solid #ccc; /* Kolor obramowania */
+  position: relative;
+}
+
+.inputInformacji::after {
+  content: '\1F50D'; /* Dodawanie ikony lupki (lupki po prawej stronie) */
+  font-size: 18px; /* Dostosuj rozmiar ikony do swoich preferencji */
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Odległość ikony od prawej krawędzi */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #333; /* Kolor ikony */
 }
 
 .dodajButton {
-  background-color: #007bff;
-  color: #fff;
-  padding: 5px 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Odległość od prawej krawędzi */
+  transform: translateY(-50%);
+  background-color: transparent;
   border: none;
-  border-radius: 3px;
   cursor: pointer;
+  padding: 0;
+}
+.kategorie {
+  /* Styl kontenera kategorie */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kategorie span {
+  /* Styl elementów "Zwierzęta" i "Artykuły" */
+  margin-right: 8px; /* Odstęp między nimi */
+}
+.dzielenie {
+  /* Styl separatora "|" */
+  color: gray; /* Kolor separatora */
 }
