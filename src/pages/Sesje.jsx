@@ -24,7 +24,7 @@ const Sesje = () => {
   return (
     <StyledWrapper>
       <StyledQuestion>
-        <p>Co spotkałeś?</p>
+        <p>Co udało Ci się spotkać?</p>
       </StyledQuestion>
       <StyledSelect
         id="rodzajZwierzecia"

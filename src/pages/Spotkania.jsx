@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import {
   StyledWrapper,
@@ -12,16 +13,17 @@ const Spotkania = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/');
+    navigate('/Sesje');
   };
 
   return (
     <StyledWrapper>
-      <StyledLink to="/Sesje">Lista</StyledLink>
-      <StyledLink to="/Mapy">Mapy</StyledLink>
+      <StyledLink to="/">Lista</StyledLink>
+      <StyledLink to="/Map">Mapy</StyledLink>
       <StyledButton onClick={handleButtonClick}>
         <StyledImage src={addBtn} alt="add-button" />
       </StyledButton>
+      <Outlet />
     </StyledWrapper>
   );
 };

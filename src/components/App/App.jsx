@@ -8,7 +8,6 @@ import styles from '../App/App.module.css';
 import bazawiedzy from '../../images/bazawiedzy.svg';
 import mojekonto from '../../images/mojekonto.svg';
 import spotkania from '../../images/spotkania.svg';
-import alerty from '../../images/alerty.svg';
 import Sesje from '../../pages/Sesje';
 import { Map } from '../../components/Map/Map';
 
@@ -21,11 +20,6 @@ const App = () => {
             <li className={styles.navItem}>
               <Link to="/Spotkania" className={styles.navLink}>
                 <img src={spotkania} alt="spo-icon" />
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to="/Alerty" className={styles.navLink}>
-                <img src={alerty} alt="spo-icon" />
               </Link>
             </li>
             <li className={styles.navItem}>
@@ -52,7 +46,11 @@ const App = () => {
             <Route path="/Map" element={<Map />} />
             <Route path="/Baza-Wiedzy" element={<BazaWiedzy />} />
             <Route path="/Moje-Konto" element={<MojeKonto />} />
-            <Route path="/Spotkania" element={<Spotkania />} />
+            <Route path="/Spotkania" element={<Spotkania />} >
+              
+            </Route>
+            {/* ///lista - przerzucic Sesja -> 
+            //mapy */}
             <Route path="/Sesje" element={<Sesje />} />
             <Route path="*" element={<Alerty />} />
           </Routes>
