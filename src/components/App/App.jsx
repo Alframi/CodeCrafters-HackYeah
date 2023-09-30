@@ -10,6 +10,7 @@ import mojekonto from '../../images/mojekonto.svg';
 import spotkania from '../../images/spotkania.svg';
 import Sesje from '../../pages/Sesje';
 import { Map } from '../../components/Map/Map';
+import Lista from '../../pages/Lista';
 
 const App = () => {
   return (
@@ -45,8 +46,7 @@ const App = () => {
             <Route path="/Baza-Wiedzy" element={<BazaWiedzy />} />
             <Route path="/Moje-Konto" element={<MojeKonto />} />
             <Route path="/Spotkania" element={<Spotkania />}></Route>
-            {/* ///lista - przerzucic Sesja -> 
-            //mapy */}
+            <Route path="/Lista" element={<Lista />} />
             <Route path="/Sesje" element={<Sesje />} />
             <Route path="*" element={<Alerty />} />
           </Routes>

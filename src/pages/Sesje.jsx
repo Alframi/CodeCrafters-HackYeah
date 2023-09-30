@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 import {
   StyledSelect,
@@ -10,16 +10,33 @@ import {
 
 const Sesje = () => {
   const [selectedAnimal, setSelectedAnimal] = useState('');
-
-  const navigate = useNavigate();
+  const [showMap, setShowMap] = useState(false); // <-- stan dla widoczności mapy
+  const mapRef = useRef(); // <-- referencja do mapy
 
   const handleSelectChange = e => {
     setSelectedAnimal(e.target.value);
   };
 
   const handleButtonClick = () => {
-    navigate('/');
+    setShowMap(!showMap); // <-- zmienia wartość stanu showMap
   };
+
+  const handleMapClick = event => {
+    const { lat, lng } = event.latlng;
+    // Zapamiętaj współrzędne w localStorage
+    const savedPoints = JSON.parse(localStorage.getItem('points') || '[]');
+    savedPoints.push({ lat, lng });
+    localStorage.setItem('points', JSON.stringify(savedPoints));
+  };
+
+  useEffect(() => {
+    if (showMap && mapRef.current) {
+      const mapInstance = mapRef.current;
+      setTimeout(() => {
+        mapInstance.leafletElement.invalidateSize();
+      }, 100);
+    }
+  }, [showMap]);
 
   return (
     <StyledWrapper>
@@ -38,6 +55,17 @@ const Sesje = () => {
         <option value="bezpańskiPies">Bezpański pies</option>
       </StyledSelect>
       <StyledButton onClick={handleButtonClick}>Wybierz</StyledButton>
+      {showMap && (
+        <MapContainer
+          ref={mapRef}
+          center={[51.505, -0.09]}
+          zoom={13}
+          style={{ width: '100%', height: '400px' }}
+          onClick={handleMapClick}
+        >
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        </MapContainer>
+      )}
     </StyledWrapper>
   );
 };
