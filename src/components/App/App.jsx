@@ -4,24 +4,37 @@ import Alerty from '../../pages/Alerty';
 import BazaWiedzy from '../../pages/BazaWiedzy';
 import MojeKonto from '../../pages/MojeKonto';
 import Spotkania from '../../pages/Spotkania';
+import styles from '../App/App.module.css';
+import bazawiedzy from '../../images/bazawiedzy.svg';
+import mojekonto from '../../images/mojekonto.svg';
+import spotkania from '../../images/spotkania.svg';
+import alerty from '../../images/alerty.svg';
 
 const App = () => {
   return (
     <div>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/Spotkania">Spotkania</Link>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <Link to="/Spotkania" className={styles.navLink}>
+                <img src={spotkania} alt="spo-icon" />
+              </Link>
             </li>
-            <li>
-              <Link to="/Alerty">Alerty</Link>
+            <li className={styles.navItem}>
+              <Link to="/Alerty" className={styles.navLink}>
+                <img src={alerty} alt="spo-icon" />
+              </Link>
             </li>
-            <li>
-              <Link to="/Baza-Wiedzy">Baza Wiedzy</Link>
+            <li className={styles.navItem}>
+              <Link to="/Baza-Wiedzy" className={styles.navLink}>
+                <img src={bazawiedzy} alt="spo-icon" />
+              </Link>
             </li>
-            <li>
-              <Link to="/Moje-Konto">Moje Konto</Link>
+            <li className={styles.navItem}>
+              <Link to="/Moje-Konto" className={styles.navLink}>
+                <img src={mojekonto} alt="spo-icon" />
+              </Link>
             </li>
           </ul>
         </nav>
