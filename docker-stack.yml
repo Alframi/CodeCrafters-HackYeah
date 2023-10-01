@@ -1,34 +1,34 @@
 version: '3.7'
 
-volumes:
-  caddy_data: {}
+# volumes:
+#   caddy_data: {}
 
-configs:
-  caddy_config:
-    file: ./services/code_crafters_caddy/Caddyfile
+# configs:
+#   caddy_config:
+#     file: ./services/code_crafters_caddy/Caddyfile
 
 services:
   node_app:
     image: alframi410/code_crafters_node_app
 
-  caddy:
-    image: alframi410/code_crafters_caddy
-    ports:
-      - '80:80'
-      - '443:443'
-    volumes:
-      - caddy_data:/data
-    configs:
-      - source: caddy_config
-        target: /etc/caddy/Caddyfile
-    deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        constraints:
-          - node.role == manager
-      resources:
-        limits:
-          memory: 128M
-        reservations:
-          memory: 64M
+  # caddy:
+  #   image: alframi410/code_crafters_caddy
+  #   ports:
+  #     - '80:80'
+  #     - '443:443'
+  #   volumes:
+  #     - caddy_data:/data
+  #   configs:
+  #     - source: caddy_config
+  #       target: /etc/caddy/Caddyfile
+  #   deploy:
+  #     mode: replicated
+  #     replicas: 1
+  #     placement:
+  #       constraints:
+  #         - node.role == manager
+  #     resources:
+  #       limits:
+  #         memory: 128M
+  #       reservations:
+  #         memory: 64M
