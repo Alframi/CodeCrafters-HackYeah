@@ -1,10 +1,4 @@
-// codecrafters.gingerbeardcoding.pl {
-//     node_app:3000 {
-//         transparent
-//         websocket
-//     }
-// }
-
-localhost {
-    ca https://acme-staging-v02.api.letsencrypt.org/directory
+codecrafters.gingerbeardcoding.pl {
+    node_app:3000 {
+        tls sebastian.ciolek@gingerbeardcoding.pl
 }
