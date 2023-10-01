@@ -3,6 +3,10 @@ version: '3.7'
 volumes:
   caddy_data: {}
 
+configs:
+  caddy_config:
+    file: ./services/code_crafters_caddy/Caddyfile
+
 services:
   node_app:
     image: alframi410/code_crafters_node_app
