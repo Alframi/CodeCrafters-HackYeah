@@ -7,6 +7,9 @@ import {
   StyledLink,
   StyledImage,
   StyledButton,
+  StyledH2,
+  StyledSpan,
+  StyledKategorie,
 } from './Spotkania.styled';
 import addBtn from '../images/addBtn.svg';
 
@@ -17,15 +20,20 @@ const Spotkania = () => {
   };
 
   return (
-    <StyledWrapper>
-      <StyledLink to="/Spotkania/Lista">Lista</StyledLink>
-      <StyledLink to="/Spotkania/Map">Mapy</StyledLink>
-
-      <StyledButton onClick={handleButtonClick}>
-        <StyledImage src={addBtn} alt="add-button" />
-      </StyledButton>
-      <Outlet />
-    </StyledWrapper>
+    <div>
+      <StyledH2>Spotkania</StyledH2>
+      <StyledWrapper>
+        <StyledKategorie>
+          <StyledLink to="/Spotkania/Lista">Lista</StyledLink>
+          <StyledSpan>|</StyledSpan>
+          <StyledLink to="/Spotkania/Map">Mapy</StyledLink>
+        </StyledKategorie>
+        <StyledButton onClick={handleButtonClick}>
+          <StyledImage src={addBtn} alt="add-button" />
+        </StyledButton>
+        <Outlet />
+      </StyledWrapper>
+    </div>
   );
 };
 

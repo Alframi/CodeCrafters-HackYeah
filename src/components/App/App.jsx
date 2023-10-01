@@ -40,7 +40,7 @@ const App = () => {
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Navigate to="/Spotkania" />} />
+            <Route path="/" element={<Navigate to="/Spotkania/Lista" />} />
             <Route path="/Spotkania" element={<Spotkania />}>
               <Route path="/Spotkania/Lista" element={<Lista />} />
               <Route path="/Spotkania/Map" element={<Map />} />

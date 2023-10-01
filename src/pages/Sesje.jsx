@@ -10,8 +10,13 @@ import {
 } from './Sesje.styled';
 
 const Sesje = () => {
+  const [events, setEvents] = useState(
+    JSON.parse(localStorage.getItem('events')) || []
+  );
+
   const [selectedAnimal, setSelectedAnimal] = useState('');
   const [showMap, setShowMap] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   const handleSelectChange = e => {
     setSelectedAnimal(e.target.value);
@@ -21,7 +26,14 @@ const Sesje = () => {
     if (selectedAnimal) {
       localStorage.setItem('selectedAnimal', selectedAnimal);
       setShowMap(true);
+      setShowButton(true);
     }
+  };
+
+  const addEvent = event => {
+    const newEvents = [...events, event];
+    localStorage.setItem('events', JSON.stringify(newEvents));
+    setEvents(newEvents);
   };
 
   return (
@@ -42,6 +54,13 @@ const Sesje = () => {
       </StyledSelect>
       <StyledButton onClick={handleButtonClick}>Wybierz</StyledButton>
       {showMap && <Map />}
+      {showButton && (
+        <StyledButton
+          onClick={() => addEvent({ name: 'Nowe Zdarzenie', date: new Date() })}
+        >
+          Dodaj
+        </StyledButton>
+      )}
     </StyledWrapper>
   );
 };
