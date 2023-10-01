@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from database import Database
 from psycopg2 import sql
+from database import Database
 
 
 app = FastAPI()
@@ -21,11 +22,9 @@ def read_root():
 
 @app.get("/users/{email}")
 async def get_user(email: str):
-    db = Database("codecrafters", "testuser", "1234", "localhost", "5432")
-    db.connect()
-
+    db_conn = Database()
     query = sql.SQL("SELECT email, password, user_type FROM users WHERE email = {}").format(sql.Literal(email))
-    user_data = db.execute_query(query).fetchone()
+    user_data = db_conn.execute_query(query).fetchone()
 
     if not user_data:
         raise HTTPException(status_code=404, detail="Item not found")
@@ -38,10 +37,8 @@ async def get_user(email: str):
 
 @app.post("/users")
 async def add_user(user: User):
-    db = Database("codecrafters", "testuser", "1234", "localhost", "5432")
-    db.connect()
-
+    db_conn = Database()
     query = sql.SQL("INSERT INTO users (email, password, user_type) VALUES (%s, %s, %s)")
     user_data = (user.email, user.password, user.user_type)
-    db.execute_query(query, user_data)
+    db_conn.execute_query(query, user_data)
     return user
