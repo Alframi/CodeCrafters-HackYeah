@@ -20,7 +20,7 @@ services:
       - caddy_data:/data
     configs:
       - source: caddy_config
-        target: /etc/Caddyfile
+        target: /etc/caddy/Caddyfile
     deploy:
       mode: replicated
       replicas: 1
