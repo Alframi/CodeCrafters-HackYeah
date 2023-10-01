@@ -1,25 +1,25 @@
 // Lista.jsx
 import React, { useState } from 'react';
-import { StyledButton } from './Lista.styled'; 
+import { StyledButton } from './Lista.styled';
 
 const Lista = () => {
   const [events, setEvents] = useState(
     JSON.parse(localStorage.getItem('events')) || []
   );
 
-  const addEvent = event => {
-    const newEvents = [...events, event];
-    localStorage.setItem('events', JSON.stringify(newEvents));
-    setEvents(newEvents);
-  };
+  // const addEvent = event => {
+  //   const newEvents = [...events, event];
+  //   localStorage.setItem('events', JSON.stringify(newEvents));
+  //   setEvents(newEvents);
+  // };
 
   return (
     <div>
-      <StyledButton
+      {/* <StyledButton
         onClick={() => addEvent({ name: 'Nowe Zdarzenie', date: new Date() })}
       >
         Wybierz
-      </StyledButton>
+      </StyledButton> */}
       <ul>
         {events.map((event, index) => (
           <li key={index}>
