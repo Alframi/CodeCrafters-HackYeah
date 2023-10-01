@@ -10,6 +10,8 @@ version: '3.7'
 services:
   node_app:
     image: alframi410/code_crafters_node_app
+    ports:
+      - '3000:3000'
 
   # caddy:
   #   image: alframi410/code_crafters_caddy
