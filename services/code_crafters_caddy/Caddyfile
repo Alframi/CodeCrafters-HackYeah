@@ -1,4 +1,4 @@
 codecrafters.gingerbeardcoding.pl {
-    proxy / node_app:3000 {
+    node_app:3000 {
         tls sebastian.ciolek@gingerbeardcoding.pl
 }
