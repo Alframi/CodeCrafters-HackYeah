@@ -29,8 +29,8 @@ class Database:
                 database=self.db_name
             )
             connection.autocommit = True
-        except psycopg2.DatabaseError:
-            raise DatabaseError('Error connecting to the database.')
+        except psycopg2.DatabaseError as p:
+            raise DatabaseError(f'Error connecting to the database. {p}')
 
         return connection
 
