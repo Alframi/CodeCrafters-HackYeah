@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-docker tag code_crafters_node_app alframi410/code_crafters_node_app:latest
-docker push alframi410/code_crafters_node_app:latest
+for folder in services/*; do
+    if [[ -f ${folder}/Dockerfile ]]; then
+        container=$(basename "${folder}")
+
+        docker tag "${container}" alframi410/"${container}":latest
+        docker push alframi410/"${container}":latest
+    fi
+done

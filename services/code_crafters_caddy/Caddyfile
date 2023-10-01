@@ -1,0 +1,4 @@
+codecrafters.gingerbeardcoding.pl {
+    node_app:3000 {
+        tls sebastian.ciolek@gingerbeardcoding.pl
+}
